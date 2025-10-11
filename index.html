@@ -3,9 +3,309 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Mindx Cinema - Premium Movie Experience</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #1a1a1a;
+            color: white;
+            min-height: 100vh;
+        }
+
+        .navbar {
+            background: #000000;
+            border-bottom: 2px solid #ff6b6b;
+            padding: 15px 0;
+        }
+
+        .navbar-brand {
+            font-weight: bold;
+            font-size: 1.5rem;
+            color: #ff6b6b !important;
+        }
+
+        .nav-link {
+            color: #cccccc !important;
+            font-weight: 500;
+            margin: 0 10px;
+        }
+
+        .nav-link:hover {
+            color: #ff6b6b !important;
+        }
+
+        .nav-link.active {
+            color: #ff6b6b !important;
+            font-weight: 600;
+        }
+
+        .hero-section {
+            height: 60vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.5));
+        }
+
+        .hero-title {
+            font-size: 3rem;
+            font-weight: bold;
+            color: #ff6b6b;
+            margin-bottom: 20px;
+        }
+
+        .hero-subtitle {
+            font-size: 1.3rem;
+            color: #ffffff;
+            margin-bottom: 30px;
+        }
+
+        .btn-custom {
+            background: #ff6b6b;
+            border: none;
+            color: white;
+            padding: 12px 25px;
+            font-weight: bold;
+            border-radius: 5px;
+            text-decoration: none;
+            display: inline-block;
+            margin: 5px;
+        }
+
+        .btn-custom:hover {
+            background: #ff5252;
+            color: white;
+        }
+
+        .movies-section {
+            padding: 50px 0;
+            background: #2d2d2d;
+        }
+
+        .section-title {
+            color: #ff6b6b;
+            font-size: 2rem;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+
+        .movie-card {
+            background: #1a1a1a;
+            border-radius: 10px;
+            overflow: hidden;
+            border: 1px solid #333;
+            height: 100%;
+            text-decoration: none;
+            color: inherit;
+            display: block;
+            margin-bottom: 20px;
+        }
+
+        .movie-card:hover {
+            border-color: #ff6b6b;
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .movie-poster {
+            height: 250px;
+        }
+
+        .movie-poster img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .movie-info {
+            padding: 20px;
+        }
+
+        .movie-title {
+            color: #ff6b6b;
+            font-size: 1.2rem;
+            font-weight: bold;
+            margin-bottom: 8px;
+        }
+
+        .movie-genre {
+            color: #888;
+            font-size: 0.9rem;
+            margin-bottom: 10px;
+        }
+
+        .movie-description {
+            color: #ccc;
+            margin-bottom: 15px;
+            font-size: 0.9rem;
+        }
+
+        .rating-text {
+            color: #ffd700;
+            font-weight: bold;
+        }
+
+        .form-control {
+            background-color: #333;
+            border: 1px solid #555;
+            color: #fff;
+            border-radius: 5px;
+        }
+
+        .form-control:focus {
+            border-color: #ff6b6b;
+            color: #fff;
+        }
+
+        .form-control::placeholder {
+            color: #888;
+        }
+
+        .btn-outline-light {
+            background: #ff6b6b;
+            border: none;
+            color: #fff;
+        }
+
+        .btn-outline-light:hover {
+            background: #ff5252;
+            color: #fff;
+        }
+
+        .footer {
+            background: #000;
+            color: #fff;
+            text-align: center;
+            padding: 20px 0;
+            border-top: 2px solid #ff6b6b;
+        }
+
+        .footer p {
+            margin: 0;
+        }
+    </style>
 </head>
 <body>
-    <h1>Du an Phim</h1>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="index.html">
+                <i class="fas fa-film me-2"></i>Mindx Cinema
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#movies">Movies</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">
+                            Genres
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#">Action & Adventure</a></li>
+                            <li><a class="dropdown-item" href="#">Drama</a></li>
+                            <li><a class="dropdown-item" href="#">Comedy</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="#">Horror & Thriller</a></li>
+                            <li><a class="dropdown-item" href="#">Sci-Fi & Fantasy</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#about">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="login.html">Login</a>
+                    </li>
+    </ul>
+                <form class="d-flex" role="search">
+                    <input class="form-control me-2" type="search" placeholder="Search movies" aria-label="Search">
+                    <button class="btn btn-outline-light" type="submit">Search</button>
+                </form>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="hero-content">
+            <h1 class="hero-title">Welcome to Mindx Cinema</h1>
+            <p class="hero-subtitle">Experience the magic of cinema in premium quality</p>
+            <div class="hero-buttons">
+                <a href="#movies" class="btn-custom">Explore Movies</a>
+                <a href="theprestige.html" class="btn-custom">Featured Movie</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Movies Section -->
+    <section id="movies" class="movies-section">
+        <div class="container">
+            <h2 class="section-title">Featured Movies</h2>
+            <div class="row">
+                <div class="col-md-4 mb-4">
+                    <a href="theprestige.html" class="movie-card">
+                        <div class="movie-poster">
+                            <img src="https://play-lh.googleusercontent.com/auIs5tjWlLYaFPGClZOJ7m5YVbnX6uBvz0X02r8TkwFKdzE53ww2MqWSS9gU0YNqoYwvpg" alt="The Dark Knight Movie Poster">
+                        </div>
+                        <div class="movie-info">
+                            <h5 class="movie-title">The Dark Knight</h5>
+                            <p class="movie-genre">Action • Drama • Thriller</p>
+                            <p class="movie-description">A psychological thriller that redefines the superhero genre.</p>
+                            <div class="rating-text">Rating: 9.0/10</div>
+                        </div>
+                    </a>
+                </div>
+                
+                <div class="col-md-4 mb-4">
+                    <a href="#" class="movie-card">
+                        <div class="movie-poster">
+                            <img src="https://m.media-amazon.com/images/I/912AErFSBHL.jpg" alt="Inception Movie Poster">
+                        </div>
+                        <div class="movie-info">
+                            <h5 class="movie-title">Inception</h5>
+                            <p class="movie-genre">Sci-Fi • Action • Mystery</p>
+                            <p class="movie-description">A mind-bending journey through the subconscious.</p>
+                            <div class="rating-text">Rating: 8.8/10</div>
+                        </div>
+                    </a>
+                </div>
+                
+                <div class="col-md-4 mb-4">
+                    <a href="#" class="movie-card">
+                        <div class="movie-poster">
+                            <img src="https://iguov8nhvyobj.vcdn.cloud/media/catalog/product/cache/1/image/c5f0a1eff4c394a251036189ccddaacd/i/n/interstellar-poster-up.jpg" alt="Interstellar Movie Poster">
+                        </div>
+                        <div class="movie-info">
+                            <h5 class="movie-title">Interstellar</h5>
+                            <p class="movie-genre">Sci-Fi • Drama • Adventure</p>
+                            <p class="movie-description">An epic space adventure exploring love and time.</p>
+                            <div class="rating-text">Rating: 8.6/10</div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2024 Mindx Cinema. All rights reserved.
+                Contact: info@mindxcinema.com, tel: +1 (555) 123-4567</p>
+  </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
