@@ -9,15 +9,15 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 
     <style>
-        body {
-            margin: 0;
-            font-family: Arial, sans-serif;
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
             background: #1a1a1a;
-            color: white;
+      color: white;
             min-height: 100vh;
-        }
+    }
 
-        .navbar {
+    .navbar {
             background: #000000;
             border-bottom: 2px solid #ff6b6b;
             padding: 15px 0;
@@ -46,8 +46,8 @@
 
         .hero-section {
             height: 60vh;
-            display: flex;
-            align-items: center;
+      display: flex;
+      align-items: center;
             justify-content: center;
             text-align: center;
             background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.5));
@@ -187,14 +187,91 @@
         }
 
         .footer p {
-            margin: 0;
+      margin: 0;
         }
 
-        <div class = "search-box">
-        <input type = "text" id="searchInput" placeholder="Enter film name.."
-        <button>onclick="timKiemPhim()"Tim kiem</button>
-        <div/>
-    </style>
+        .ghibli-section {
+            padding: 50px 0;
+            background: #1a1a1a;
+        }
+
+        .search-box {
+            text-align: center;
+            margin-bottom: 30px;
+            padding: 20px;
+        }
+
+        .search-box input {
+            background-color: #333;
+            border: 2px solid #555;
+            color: #fff;
+            border-radius: 5px;
+            padding: 12px 20px;
+            width: 300px;
+            font-size: 1rem;
+            margin-right: 10px;
+        }
+
+        .search-box input:focus {
+            border-color: #ff6b6b;
+            outline: none;
+        }
+
+        .search-box button {
+            background: #ff6b6b;
+            border: none;
+      color: white;
+            padding: 12px 25px;
+      font-weight: bold;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .search-box button:hover {
+            background: #ff5252;
+        }
+
+        #ghibliMovies {
+            min-height: 200px;
+        }
+
+        .ghibli-card {
+            background: #2d2d2d;
+            border-radius: 10px;
+            overflow: hidden;
+            border: 1px solid #333;
+            margin-bottom: 20px;
+            transition: all 0.3s ease;
+        }
+
+        .ghibli-card:hover {
+            border-color: #ff6b6b;
+            transform: translateY(-5px);
+        }
+
+        .ghibli-image {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+        }
+
+        .ghibli-info {
+            padding: 20px;
+        }
+
+        .loading {
+            text-align: center;
+            color: #ff6b6b;
+            font-size: 1.2rem;
+            padding: 40px;
+        }
+
+        .error {
+      text-align: center;
+            color: #ff6b6b;
+            padding: 20px;
+    }
+  </style>
 </head>
 <body>
     <!-- Navigation -->
@@ -285,8 +362,8 @@
                             <div class="rating-text">Rating: 8.8/10</div>
                         </div>
                     </a>
-                </div>
-                
+  </div>
+
                 <div class="col-md-4 mb-4">
                     <a href="#" class="movie-card">
                         <div class="movie-poster">
@@ -304,7 +381,21 @@
         </div>
     </section>
 
-   
+    <!-- Studio Ghibli Films Section -->
+    <section id="ghibli" class="ghibli-section">
+        <div class="container">
+            <h2 class="section-title">Studio Ghibli Films</h2>
+            
+            <div class="search-box">
+                <input type="text" id="searchInput" placeholder="Enter film name..." />
+                <button onclick="timKiemPhim()">Tìm kiếm</button>
+            </div>
+
+            <div id="ghibliMovies" class="row">
+                <div class="loading">Loading Studio Ghibli films...</div>
+            </div>
+        </div>
+    </section>
 
     <!-- Footer -->
     <footer class="footer">
